@@ -143,3 +143,62 @@
     ['wifi-security','dot-style','corner-style'].forEach(id => {
       document.getElementById(id).addEventListener('change', update);
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = loadSettings();
+      if (!saved) return;
+
+      // Restore active tab (D-05, D-06, PERS-04)
+      if (saved.activeTab && saved.activeTab !== activeTab) {
+        activeTab = saved.activeTab;
+        document.querySelectorAll('.tab').forEach(t => {
+          t.classList.toggle('active', t.dataset.tab === activeTab);
+        });
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-' + activeTab).classList.add('active');
+      }
+
+      // Restore colors (PERS-01)
+      if (saved.fgColor) {
+        document.getElementById('fg-color').value = saved.fgColor;
+        document.getElementById('fg-hex').textContent = saved.fgColor;
+      }
+      if (saved.bgColor) {
+        document.getElementById('bg-color').value = saved.bgColor;
+        document.getElementById('bg-hex').textContent = saved.bgColor;
+      }
+
+      // Restore dot and corner styles (PERS-01)
+      if (saved.dotStyle) document.getElementById('dot-style').value = saved.dotStyle;
+      if (saved.cornerStyle) document.getElementById('corner-style').value = saved.cornerStyle;
+
+      // Restore logo (D-03, D-05)
+      if (saved.logoDataUrl) {
+        logoDataUrl = saved.logoDataUrl;
+        document.getElementById('logo-name').textContent = saved.logoFileName || 'logo.png';
+        document.getElementById('logo-clear').style.display = 'inline';
+        document.getElementById('logo-size-field').style.display = 'block';
+      }
+
+      // Restore logo size (PERS-02)
+      if (saved.logoSize) {
+        document.getElementById('logo-size').value = saved.logoSize;
+        document.getElementById('logo-size-val').textContent = saved.logoSize + '%';
+      }
+
+      // Restore download format (D-04)
+      if (saved.downloadFormat) {
+        downloadFormat = saved.downloadFormat;
+        document.getElementById('fmt-png').classList.toggle('active', downloadFormat === 'png');
+        document.getElementById('fmt-svg').classList.toggle('active', downloadFormat === 'svg');
+      }
+
+      // Restore content fields (D-02)
+      if (saved.urlInput) document.getElementById('url-input').value = saved.urlInput;
+      if (saved.wifiSsid) document.getElementById('wifi-ssid').value = saved.wifiSsid;
+      if (saved.wifiSecurity) document.getElementById('wifi-security').value = saved.wifiSecurity;
+      // wifi-password deliberately NOT restored (D-02)
+
+      // Trigger QR code update to reflect restored settings (D-05)
+      update();
+    });
