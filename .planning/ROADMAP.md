@@ -60,8 +60,10 @@ Plans:
 - `.planning/codebase/STRUCTURE.md` — function locations (`getData`, `update`, tab switching, logo size listener)
 - `app.js` (after Phase 1) — where localStorage read/write hooks attach
 
-**Plans:**
-1. Implement localStorage save on each setting change and restore on `DOMContentLoaded`
+**Plans:** 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Implement localStorage save on change and restore on DOMContentLoaded
 
 ---
 
@@ -151,4 +153,4 @@ These items are out of scope for Milestone 1. Revisit after v1 ships.
 ---
 
 *Roadmap defined: 2026-03-30*
-*Last updated: 2026-03-30 after Phase 1 planning*
+*Last updated: 2026-03-30 after Phase 2 planning*
