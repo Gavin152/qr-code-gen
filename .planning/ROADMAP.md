@@ -10,7 +10,7 @@
 ## Phases
 
 - [x] **Phase 1: Codebase Split** - Extract HTML/CSS/JS into separate files; all existing functionality preserved (completed 2026-03-30)
-- [ ] **Phase 2: Persistence** - Save and restore QR settings across page loads via localStorage
+- [x] **Phase 2: Persistence** - Save and restore QR settings across page loads via localStorage (completed 2026-03-30)
 - [ ] **Phase 3: Design & Social** - Polished minimal redesign, dark/light theme, Ko-fi + GitHub sidebar
 - [ ] **Phase 4: Testing** - Unit tests for logic functions and Playwright E2E tests for key user flows
 
@@ -60,10 +60,10 @@ Plans:
 - `.planning/codebase/STRUCTURE.md` — function locations (`getData`, `update`, tab switching, logo size listener)
 - `app.js` (after Phase 1) — where localStorage read/write hooks attach
 
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
-- [ ] 02-01-PLAN.md — Implement localStorage save on change and restore on DOMContentLoaded
+- [x] 02-01-PLAN.md — Implement localStorage save on change and restore on DOMContentLoaded
 
 ---
 
@@ -121,7 +121,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Codebase Split | 1/1 | Complete   | 2026-03-30 |
-| 2. Persistence | 0/1 | Not started | - |
+| 2. Persistence | 1/1 | Complete   | 2026-03-30 |
 | 3. Design & Social | 0/2 | Not started | - |
 | 4. Testing | 0/2 | Not started | - |
 

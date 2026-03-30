@@ -12,10 +12,10 @@
 
 ### Persistence
 
-- [ ] **PERS-01**: QR settings (colors, dot style, corner style, active tab) are saved to localStorage on change
-- [ ] **PERS-02**: Logo size setting is saved to localStorage
-- [ ] **PERS-03**: Settings are restored from localStorage on page load
-- [ ] **PERS-04**: Active tab (URL/WiFi) is restored from localStorage
+- [x] **PERS-01**: QR settings (colors, dot style, corner style, active tab) are saved to localStorage on change
+- [x] **PERS-02**: Logo size setting is saved to localStorage
+- [x] **PERS-03**: Settings are restored from localStorage on page load
+- [x] **PERS-04**: Active tab (URL/WiFi) is restored from localStorage
 
 ### Theme
 
@@ -75,10 +75,10 @@
 |-------------|-------|--------|
 | STRUCT-01 | Phase 1 | Complete |
 | STRUCT-02 | Phase 1 | Complete |
-| PERS-01 | Phase 2 | Pending |
-| PERS-02 | Phase 2 | Pending |
-| PERS-03 | Phase 2 | Pending |
-| PERS-04 | Phase 2 | Pending |
+| PERS-01 | Phase 2 | Complete |
+| PERS-02 | Phase 2 | Complete |
+| PERS-03 | Phase 2 | Complete |
+| PERS-04 | Phase 2 | Complete |
 | THEME-01 | Phase 3 | Pending |
 | THEME-02 | Phase 3 | Pending |
 | THEME-03 | Phase 3 | Pending |
