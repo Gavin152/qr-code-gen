@@ -1,6 +1,32 @@
     let logoDataUrl = null;
     let activeTab = 'url';
 
+    function saveSettings(settings) {
+      try { localStorage.setItem('qr-settings', JSON.stringify(settings)); } catch (e) { /* silent — per D-07 */ }
+    }
+
+    function loadSettings() {
+      try { const s = localStorage.getItem('qr-settings'); return s ? JSON.parse(s) : null; } catch (e) { return null; }
+    }
+
+    function saveAllSettings() {
+      const logoToSave = (logoDataUrl !== null && logoDataUrl.length <= 500000) ? logoDataUrl : null;
+      saveSettings({
+        activeTab: activeTab,
+        fgColor: document.getElementById('fg-color').value,
+        bgColor: document.getElementById('bg-color').value,
+        dotStyle: document.getElementById('dot-style').value,
+        cornerStyle: document.getElementById('corner-style').value,
+        logoSize: document.getElementById('logo-size').value,
+        logoDataUrl: logoToSave,
+        logoFileName: document.getElementById('logo-name').textContent,
+        downloadFormat: downloadFormat,
+        urlInput: document.getElementById('url-input').value,
+        wifiSsid: document.getElementById('wifi-ssid').value,
+        wifiSecurity: document.getElementById('wifi-security').value,
+      });
+    }
+
     const qrCode = new QRCodeStyling({
       width: 300,
       height: 300,
@@ -43,6 +69,7 @@
         cornersDotOptions: { color: fg },
         backgroundOptions: { color: bg },
       });
+      saveAllSettings();
     }
 
     // Tab switching
@@ -102,6 +129,7 @@
       downloadFormat = fmt;
       document.getElementById('fmt-png').classList.toggle('active', fmt === 'png');
       document.getElementById('fmt-svg').classList.toggle('active', fmt === 'svg');
+      saveAllSettings();
     }
 
     function downloadQR() {
