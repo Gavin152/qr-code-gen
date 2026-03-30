@@ -34,8 +34,10 @@
 - `.planning/codebase/ARCHITECTURE.md` — layer descriptions and function locations
 - `index.html` — source of truth for all markup, styles, and logic to extract
 
-**Plans:**
-1. Extract CSS to `styles.css` and JS to `app.js`; update `index.html` to link both
+**Plans:** 1 plan
+
+Plans:
+- [ ] 01-01-PLAN.md — Extract CSS and JS into separate files; update index.html to link both
 
 **UI hint**: yes
 
@@ -149,4 +151,4 @@ These items are out of scope for Milestone 1. Revisit after v1 ships.
 ---
 
 *Roadmap defined: 2026-03-30*
-*Last updated: 2026-03-30 after initial creation*
+*Last updated: 2026-03-30 after Phase 1 planning*
