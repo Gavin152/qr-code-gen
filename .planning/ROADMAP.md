@@ -9,7 +9,7 @@
 
 ## Phases
 
-- [ ] **Phase 1: Codebase Split** - Extract HTML/CSS/JS into separate files; all existing functionality preserved
+- [x] **Phase 1: Codebase Split** - Extract HTML/CSS/JS into separate files; all existing functionality preserved (completed 2026-03-30)
 - [ ] **Phase 2: Persistence** - Save and restore QR settings across page loads via localStorage
 - [ ] **Phase 3: Design & Social** - Polished minimal redesign, dark/light theme, Ko-fi + GitHub sidebar
 - [ ] **Phase 4: Testing** - Unit tests for logic functions and Playwright E2E tests for key user flows
@@ -34,10 +34,10 @@
 - `.planning/codebase/ARCHITECTURE.md` — layer descriptions and function locations
 - `index.html` — source of truth for all markup, styles, and logic to extract
 
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
-- [ ] 01-01-PLAN.md — Extract CSS and JS into separate files; update index.html to link both
+- [x] 01-01-PLAN.md — Extract CSS and JS into separate files; update index.html to link both
 
 **UI hint**: yes
 
@@ -118,7 +118,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Codebase Split | 0/1 | Not started | - |
+| 1. Codebase Split | 1/1 | Complete   | 2026-03-30 |
 | 2. Persistence | 0/1 | Not started | - |
 | 3. Design & Social | 0/2 | Not started | - |
 | 4. Testing | 0/2 | Not started | - |

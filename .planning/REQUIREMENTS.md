@@ -7,8 +7,8 @@
 
 ### Codebase Structure
 
-- [ ] **STRUCT-01**: HTML, CSS, and JavaScript are split into separate files (`index.html`, `styles.css`, `app.js`)
-- [ ] **STRUCT-02**: All existing functionality works identically after the split
+- [x] **STRUCT-01**: HTML, CSS, and JavaScript are split into separate files (`index.html`, `styles.css`, `app.js`)
+- [x] **STRUCT-02**: All existing functionality works identically after the split
 
 ### Persistence
 
@@ -73,8 +73,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| STRUCT-01 | Phase 1 | Pending |
-| STRUCT-02 | Phase 1 | Pending |
+| STRUCT-01 | Phase 1 | Complete |
+| STRUCT-02 | Phase 1 | Complete |
 | PERS-01 | Phase 2 | Pending |
 | PERS-02 | Phase 2 | Pending |
 | PERS-03 | Phase 2 | Pending |
