@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-stopped_at: Completed 01-01-PLAN.md — Phase 1 Codebase Split complete
-last_updated: "2026-03-30T14:44:39.975Z"
+status: active
+stopped_at: Verified 01-codebase-split — Phase 1 complete; next is Phase 2 (Persistence)
+last_updated: "2026-03-30T15:00:00Z"
 progress:
   total_phases: 4
   completed_phases: 1
@@ -19,13 +19,13 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-03-30)
 
 **Core value:** Generate and download a styled QR code in under 30 seconds, with zero friction.
-**Current focus:** Phase 01 — codebase-split
+**Current focus:** Phase 02 — persistence
 
 ## Current Status
 
 **Milestone:** 1 — v1: Polished, Tested, Shareable
-**Active phase:** 1 (Codebase Split)
-**Overall progress:** 0/4 phases complete
+**Active phase:** 2 (Persistence)
+**Overall progress:** 1/4 phases complete
 
 ## Phase Progress
 
@@ -38,7 +38,7 @@ See: `.planning/PROJECT.md` (updated 2026-03-30)
 
 ## Last Session
 
-**Stopped at:** Completed 01-01-PLAN.md — Phase 1 Codebase Split complete
+**Stopped at:** Verified 01-codebase-split — Phase 1 complete; next is Phase 2 (Persistence)
 **Date:** 2026-03-30
 **Resume:** Phase 2 — Persistence (`.planning/phases/02-persistence/`)
 
