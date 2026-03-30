@@ -65,9 +65,12 @@ Source: extracted from `styles.css` verbatim measurements.
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
 | Body / inputs | 15px (0.95rem) | 400 | 1.5 (browser default) |
-| Label / section-title | 13px (0.82rem) | 500 | 1.5 |
+| Label / section-title | 13px (0.82rem) | 400 | 1.5 |
 | Heading (h1) | 22px (1.4rem) | 600 | 1.2 |
 | Monospace (color hex) | 14px (0.88rem) | 400 | 1.5 |
+
+Labels are distinguished from body text by size (13px vs 15px), not weight.
+Two weights only: 400 (body, inputs, labels, monospace) and 600 (headings).
 
 Source: extracted from `styles.css`. No new typographic roles introduced in Phase 2.
 
