@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: "Checkpoint: Task 3 human-verify awaiting browser verification of codebase split"
-last_updated: "2026-03-30T14:38:35.850Z"
+stopped_at: Completed 01-01-PLAN.md — Phase 1 Codebase Split complete
+last_updated: "2026-03-30T14:44:39.975Z"
 progress:
   total_phases: 4
   completed_phases: 1
@@ -31,16 +31,16 @@ See: `.planning/PROJECT.md` (updated 2026-03-30)
 
 | Phase | Status | Plans |
 |-------|--------|-------|
-| 1. Codebase Split | In progress | 1/1 (awaiting checkpoint) |
+| 1. Codebase Split | Complete | 1/1 |
 | 2. Persistence | Not started | 0/1 |
 | 3. Design & Social | Not started | 0/2 |
 | 4. Testing | Not started | 0/2 |
 
 ## Last Session
 
-**Stopped at:** Checkpoint: Task 3 human-verify awaiting browser verification of codebase split
+**Stopped at:** Completed 01-01-PLAN.md — Phase 1 Codebase Split complete
 **Date:** 2026-03-30
-**Resume:** `.planning/phases/01-codebase-split/01-01-PLAN.md` (Task 3 — human-verify)
+**Resume:** Phase 2 — Persistence (`.planning/phases/02-persistence/`)
 
 ## Decisions
 
