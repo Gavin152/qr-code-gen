@@ -85,8 +85,8 @@ Plans:
 - `styles.css` (after Phase 1) — file to extend with theme variables, dark/light rules, and sidebar/footer layout
 
 **Plans:**
-1. Implement CSS custom properties for theme tokens; add `prefers-color-scheme` media query and manual toggle with localStorage persistence
-2. Redesign layout and component styling; add Ko-fi + GitHub sidebar (desktop) / footer (mobile)
+- [x] 03-01-PLAN.md — CSS custom property tokens, prefers-color-scheme media query, manual toggle with localStorage persistence
+- [ ] 03-02-PLAN.md — Redesign layout and component styling; add Ko-fi + GitHub sidebar (desktop) / footer (mobile)
 
 **UI hint**: yes
 
@@ -122,7 +122,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Codebase Split | 1/1 | Complete   | 2026-03-30 |
 | 2. Persistence | 1/1 | Complete   | 2026-03-30 |
-| 3. Design & Social | 0/2 | Not started | - |
+| 3. Design & Social | 1/2 | In progress | - |
 | 4. Testing | 0/2 | Not started | - |
 
 ---

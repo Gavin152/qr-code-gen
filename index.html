@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR Code Generator</title>
   <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+  <script>
+    try {
+      var t = localStorage.getItem('theme-preference');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {}
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀</button>
     <h1>QR Code Generator</h1>
 
     <!-- Tabs -->
