@@ -1,6 +1,7 @@
     let logoDataUrl = null;
     let activeTab = 'url';
 
+
     function saveSettings(settings) {
       try { localStorage.setItem('qr-settings', JSON.stringify(settings)); } catch (e) { /* silent — per D-07 */ }
     }
@@ -135,6 +136,16 @@
     function downloadQR() {
       qrCode.download({ name: 'qrcode', extension: downloadFormat });
     }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const isDark = current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const next = isDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme-preference', next); } catch(e) {}
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
     // Live update on all inputs
     ['url-input','wifi-ssid','wifi-password'].forEach(id => {

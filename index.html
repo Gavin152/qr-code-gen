@@ -4,113 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR Code Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+  <script>
+    try {
+      var t = localStorage.getItem('theme-preference');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {}
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app">
-    <h1>QR Code Generator</h1>
-
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab active" data-tab="url">URL</button>
-      <button class="tab" data-tab="wifi">WiFi</button>
-    </div>
-
-    <!-- URL Panel -->
-    <div class="panel active" id="panel-url">
-      <div class="field">
-        <label>URL</label>
-        <input type="text" id="url-input" placeholder="https://example.com" value="https://example.com">
+    <header class="app-header">
+      <div class="app-title-group">
+        <h1>No BS QR Code Generator</h1>
+        <p class="app-tagline">No ads. No sign up. No limits. No BS.</p>
       </div>
-    </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </header>
 
-    <!-- WiFi Panel -->
-    <div class="panel" id="panel-wifi">
-      <div class="field">
-        <label>Network Name (SSID)</label>
-        <input type="text" id="wifi-ssid" placeholder="MyNetwork">
+    <div class="form-col">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="url">URL</button>
+        <button class="tab" data-tab="wifi">WiFi</button>
       </div>
-      <div class="field">
-        <label>Password</label>
-        <input type="password" id="wifi-password" placeholder="••••••••">
-      </div>
-      <div class="field">
-        <label>Security</label>
-        <select id="wifi-security">
-          <option value="WPA">WPA/WPA2</option>
-          <option value="WEP">WEP</option>
-          <option value="">None</option>
-        </select>
-      </div>
-    </div>
 
-    <!-- Styling -->
-    <div class="section-title">Style</div>
-
-    <div class="row">
-      <div class="field">
-        <label>Dot Shape</label>
-        <select id="dot-style">
-          <option value="square">Square</option>
-          <option value="rounded">Rounded</option>
-          <option value="extra-rounded" selected>Extra Rounded</option>
-          <option value="classy">Classy</option>
-          <option value="classy-rounded">Classy Rounded</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Corner Shape</label>
-        <select id="corner-style">
-          <option value="square">Square</option>
-          <option value="extra-rounded" selected>Rounded</option>
-          <option value="dot">Dot</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="field">
-        <label>Foreground</label>
-        <div class="color-field">
-          <input type="color" id="fg-color" value="#000000">
-          <span class="color-hex" id="fg-hex">#000000</span>
+      <!-- URL Panel -->
+      <div class="panel active" id="panel-url">
+        <div class="field">
+          <label>URL</label>
+          <input type="text" id="url-input" placeholder="https://example.com" value="https://example.com">
         </div>
       </div>
-      <div class="field">
-        <label>Background</label>
-        <div class="color-field">
-          <input type="color" id="bg-color" value="#ffffff">
-          <span class="color-hex" id="bg-hex">#ffffff</span>
+
+      <!-- WiFi Panel -->
+      <div class="panel" id="panel-wifi">
+        <div class="field">
+          <label>Network Name (SSID)</label>
+          <input type="text" id="wifi-ssid" placeholder="MyNetwork">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="wifi-password" placeholder="••••••••">
+        </div>
+        <div class="field">
+          <label>Security</label>
+          <select id="wifi-security">
+            <option value="WPA">WPA/WPA2</option>
+            <option value="WEP">WEP</option>
+            <option value="">None</option>
+          </select>
         </div>
       </div>
-    </div>
 
-    <div class="field" style="margin-top:1rem">
-      <label>Logo</label>
-      <div class="logo-row">
-        <button class="logo-btn" onclick="document.getElementById('logo-input').click()">Choose image</button>
-        <input type="file" id="logo-input" accept="image/*">
-        <span class="logo-name" id="logo-name"></span>
-        <button class="logo-clear" id="logo-clear" style="display:none" onclick="clearLogo()">remove</button>
+      <!-- Styling -->
+      <div class="section-title">Style</div>
+
+      <div class="row">
+        <div class="field">
+          <label>Dot Shape</label>
+          <select id="dot-style">
+            <option value="square">Square</option>
+            <option value="rounded">Rounded</option>
+            <option value="extra-rounded" selected>Extra Rounded</option>
+            <option value="classy">Classy</option>
+            <option value="classy-rounded">Classy Rounded</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Corner Shape</label>
+          <select id="corner-style">
+            <option value="square">Square</option>
+            <option value="extra-rounded" selected>Rounded</option>
+            <option value="dot">Dot</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Foreground</label>
+          <div class="color-field">
+            <input type="color" id="fg-color" value="#000000">
+            <span class="color-hex" id="fg-hex">#000000</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Background</label>
+          <div class="color-field">
+            <input type="color" id="bg-color" value="#ffffff">
+            <span class="color-hex" id="bg-hex">#ffffff</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:1rem">
+        <label>Logo</label>
+        <div class="logo-row">
+          <button class="logo-btn" onclick="document.getElementById('logo-input').click()">Choose image</button>
+          <input type="file" id="logo-input" accept="image/*">
+          <span class="logo-name" id="logo-name"></span>
+          <button class="logo-clear" id="logo-clear" style="display:none" onclick="clearLogo()">remove</button>
+        </div>
+      </div>
+      <div class="field" id="logo-size-field" style="display:none">
+        <label>Logo Size — <span id="logo-size-val">30%</span></label>
+        <input type="range" id="logo-size" min="10" max="60" value="30" style="width:100%;cursor:pointer">
       </div>
     </div>
-    <div class="field" id="logo-size-field" style="display:none">
-      <label>Logo Size — <span id="logo-size-val">30%</span></label>
-      <input type="range" id="logo-size" min="10" max="60" value="30" style="width:100%;cursor:pointer">
+
+    <div class="preview-col">
+      <!-- Preview -->
+      <div class="preview">
+        <div id="qr-canvas"></div>
+      </div>
+
+      <!-- Download -->
+      <div class="download-row">
+        <button class="fmt-btn active" id="fmt-png" onclick="setFormat('png')">PNG</button>
+        <button class="fmt-btn" id="fmt-svg" onclick="setFormat('svg')">SVG</button>
+        <button class="download-btn" onclick="downloadQR()">Download</button>
+      </div>
+
     </div>
 
-    <!-- Preview -->
-    <div class="preview">
-      <div id="qr-canvas"></div>
-    </div>
-
-    <!-- Download -->
-    <div class="download-row">
-      <button class="fmt-btn active" id="fmt-png" onclick="setFormat('png')">PNG</button>
-      <button class="fmt-btn" id="fmt-svg" onclick="setFormat('svg')">SVG</button>
-      <button class="download-btn" onclick="downloadQR()">Download</button>
-    </div>
+    <!-- Social links — spans full width below both columns -->
+    <div class="social-links">
+    <a href="https://ko-fi.com/nmolina" target="_blank" rel="noopener noreferrer" class="kofi-link">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"/>
+      </svg>
+      Buy me a coffee
+    </a>
+    <a href="https://github.com/Gavin152/no-bs-qr-codes" target="_blank" rel="noopener noreferrer" class="github-link">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+      </svg>
+      Source on GitHub
+    </a>
+  </div>
   </div>
 
   <script src="app.js"></script>
