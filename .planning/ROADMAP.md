@@ -3,7 +3,7 @@
 **Project:** QR Code Generator
 **Defined:** 2026-03-30
 **Granularity:** Coarse
-**Coverage:** 21/21 v1 requirements mapped
+**Coverage:** 29/29 v1 requirements mapped
 
 ---
 
@@ -11,7 +11,8 @@
 
 - [x] **Phase 1: Codebase Split** - Extract HTML/CSS/JS into separate files; all existing functionality preserved (completed 2026-03-30)
 - [x] **Phase 2: Persistence** - Save and restore QR settings across page loads via localStorage (completed 2026-03-30)
-- [ ] **Phase 3: Design & Social** - Polished minimal redesign, dark/light theme, Ko-fi + GitHub sidebar
+- [x] **Phase 3: Design & Social** - Polished minimal redesign, dark/light theme, Ko-fi + GitHub sidebar (completed 2026-04-02)
+- [ ] **Phase 3.5: SEO** - Meta tags, canonical URL, Open Graph, JSON-LD, robots.txt, sitemap, favicon
 - [ ] **Phase 4: Testing** - Unit tests for logic functions and Playwright E2E tests for key user flows
 
 ---
@@ -92,6 +93,33 @@ Plans:
 
 ---
 
+### Phase 3.5: SEO
+
+**Goal:** The app is discoverable by search engines — every on-page signal and supporting file is in place so Google can crawl, understand, and rank the page.
+
+**Delivers:**
+- Specific, keyword-rich `<title>` and `<meta name="description">` present in `<head>`
+- `<link rel="canonical">` and Open Graph tags for correct URL representation across search and social
+- JSON-LD `WebApplication` schema marks the page as a free tool
+- `robots.txt` allows all crawlers and points to the sitemap
+- `sitemap.xml` lists the production URL for submission to Search Console
+- `favicon.svg` appears in browser tabs and search result favicons
+
+**Requirements:** SEO-01, SEO-02, SEO-03, SEO-04, SEO-05, SEO-06, SEO-07, SEO-08
+
+**Canonical refs:**
+- `index.html` — file to extend with meta, canonical, OG, JSON-LD, favicon link
+- `robots.txt` — new file at project root
+- `sitemap.xml` — new file at project root
+- `favicon.svg` — new file at project root
+
+**Plans:**
+- [x] 03-seo-01-PLAN.md — All SEO signals: meta tags, OG, JSON-LD, robots.txt, sitemap.xml, favicon.svg
+
+**UI hint**: no (head-only and new files — no visible layout changes)
+
+---
+
 ### Phase 4: Testing
 
 **Goal:** Core logic and critical user flows are covered by automated tests so regressions are caught before they ship.
@@ -120,9 +148,10 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Codebase Split | 1/1 | Complete   | 2026-03-30 |
-| 2. Persistence | 1/1 | Complete   | 2026-03-30 |
-| 3. Design & Social | 1/2 | In progress | - |
+| 1. Codebase Split | 1/1 | Complete | 2026-03-30 |
+| 2. Persistence | 1/1 | Complete | 2026-03-30 |
+| 3. Design & Social | 2/2 | Complete | 2026-04-02 |
+| 3.5. SEO | 1/1 | Complete | 2026-04-02 |
 | 4. Testing | 0/2 | Not started | - |
 
 ---

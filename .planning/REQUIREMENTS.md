@@ -36,6 +36,17 @@
 - [ ] **SOCIAL-03**: Sidebar is displayed on desktop (≥768px)
 - [ ] **SOCIAL-04**: Sidebar collapses to a footer bar on mobile (<768px)
 
+### SEO
+
+- [ ] **SEO-01**: `<meta name="description">` is present and under 160 characters
+- [ ] **SEO-02**: `<title>` is specific and differentiating (not just "QR Code Generator")
+- [ ] **SEO-03**: `<link rel="canonical">` points to the production URL
+- [ ] **SEO-04**: Open Graph tags present (`og:type`, `og:url`, `og:title`, `og:description`)
+- [ ] **SEO-05**: JSON-LD structured data marks the page as `WebApplication` with a free `Offer`
+- [ ] **SEO-06**: `robots.txt` exists at the root and allows all crawlers
+- [ ] **SEO-07**: `sitemap.xml` exists at the root and lists the production URL
+- [ ] **SEO-08**: `favicon.svg` exists and is linked from `<head>`
+
 ### Testing
 
 - [ ] **TEST-01**: Unit tests cover `getData()` for URL and WiFi modes
@@ -89,6 +100,14 @@
 | SOCIAL-02 | Phase 3 | Pending |
 | SOCIAL-03 | Phase 3 | Pending |
 | SOCIAL-04 | Phase 3 | Pending |
+| SEO-01 | Phase 3.5 | Pending |
+| SEO-02 | Phase 3.5 | Pending |
+| SEO-03 | Phase 3.5 | Pending |
+| SEO-04 | Phase 3.5 | Pending |
+| SEO-05 | Phase 3.5 | Pending |
+| SEO-06 | Phase 3.5 | Pending |
+| SEO-07 | Phase 3.5 | Pending |
+| SEO-08 | Phase 3.5 | Pending |
 | TEST-01 | Phase 4 | Pending |
 | TEST-02 | Phase 4 | Pending |
 | TEST-03 | Phase 4 | Pending |
@@ -98,8 +117,8 @@
 | TEST-07 | Phase 4 | Pending |
 
 **Coverage:**
-- v1 requirements: 21 total
-- Mapped to phases: 21
+- v1 requirements: 29 total
+- Mapped to phases: 29
 - Unmapped: 0 ✓
 
 ---
