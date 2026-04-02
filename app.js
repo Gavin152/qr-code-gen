@@ -1,6 +1,7 @@
     let logoDataUrl = null;
     let activeTab = 'url';
 
+
     function saveSettings(settings) {
       try { localStorage.setItem('qr-settings', JSON.stringify(settings)); } catch (e) { /* silent — per D-07 */ }
     }
@@ -141,7 +142,6 @@
       const isDark = current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
       const next = isDark ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      document.getElementById('theme-toggle').textContent = next === 'dark' ? '☾' : '☀';
       try { localStorage.setItem('theme-preference', next); } catch(e) {}
     }
 
@@ -156,13 +156,6 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Set correct theme toggle icon on load
-      (function() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const isDark = current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        document.getElementById('theme-toggle').textContent = isDark ? '☾' : '☀';
-      })();
-
       const saved = loadSettings();
       if (!saved) return;
 
